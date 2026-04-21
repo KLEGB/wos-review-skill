@@ -1,0 +1,4 @@
+interface:
+  display_name: "WOS Review Workflow"
+  short_description: "Build WOS stats and seven CN/EN chart outputs"
+  default_prompt: "Analyze Web of Science exports under citations and produce full pipeline outputs or a single requested chart in CN/EN."

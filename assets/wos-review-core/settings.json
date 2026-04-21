@@ -1,0 +1,178 @@
+{
+  "_comment": "WOS 文献分析项目全局配置文件",
+
+  "language": "cn",
+
+  "paths": {
+    "citations_dir": "citations",
+    "outputs_dir": "outputs"
+  },
+
+  "fonts": {
+    "cn": "Noto Sans CJK SC",
+    "en": "DejaVu Sans",
+    "title_size": 20,
+    "label_size": 14,
+    "tick_size": 12,
+    "legend_size": 12,
+    "annotation_size": 11
+  },
+
+  "colors": {
+    "_comment": "主色系来源于 freq_2.py 饼图色板，并扩展为完整序列",
+    "palette": [
+      "#4C72B0",
+      "#55A868",
+      "#64B5CD",
+      "#8172B2",
+      "#CCB974",
+      "#8C8C8C",
+      "#2A9D8F",
+      "#1F77B4",
+      "#6BAED6",
+      "#74C476",
+      "#31688e",
+      "#35b779",
+      "#fde725",
+      "#440154"
+    ],
+    "collab_line_color": "#e63946",
+    "map_cmap": "Blues",
+    "grid_color": "#858585",
+    "equator_color": "#7e7e7e",
+    "land_edge_color": "#abb2b9",
+    "ocean_bg_color": "#ebebeb",
+    "bar_independent_color": "#4C72B0",
+    "bar_collab_color": "#2A9D8F",
+    "pie_edge_color": "white",
+    "chord_palette": [
+      "#4C72B0",
+      "#55A868",
+      "#64B5CD",
+      "#8172B2",
+      "#CCB974",
+      "#8C8C8C",
+      "#2A9D8F",
+      "#1F77B4",
+      "#6BAED6",
+      "#74C476",
+      "#31688e",
+      "#35b779",
+      "#fde725",
+      "#440154"
+    ]
+  },
+
+  "charts": {
+    "yearly_bar": {
+      "enabled": true,
+      "figsize": [8, 12],
+      "top_n_countries": 8,
+      "bar_width": 0.65,
+      "title_cn": "各国逐年发文量\n（前8名国家及其他）",
+      "title_en": "Annual Publication Volume by Country\n(Top 8 + Others)",
+      "xlabel_cn": "年份",
+      "xlabel_en": "Year",
+      "ylabel_cn": "发文量",
+      "ylabel_en": "Number of Publications",
+      "output_filename": "01_yearly_stacked_bar.png"
+    },
+    "collab_bar": {
+      "enabled": true,
+      "figsize": [8, 12],
+      "top_n_countries": 10,
+      "bar_width": 0.38,
+      "title_cn": "前十国家：独立研究与\n国际合作研究对比",
+      "title_en": "Top 10 Countries: Independent Research\nvs International Collaboration",
+      "xlabel_cn": "发文量",
+      "xlabel_en": "Number of Publications",
+      "ylabel_cn": "",
+      "ylabel_en": "",
+      "legend_independent_cn": "独立研究",
+      "legend_independent_en": "Independent Research",
+      "legend_collab_cn": "国际合作研究",
+      "legend_collab_en": "International Collaboration",
+      "output_filename": "02_collab_bar.png"
+    },
+    "chord": {
+      "enabled": true,
+      "figsize": [14, 14],
+      "top_n_countries": 14,
+      "min_collab_count": 5,
+      "arc_width": 0.075,
+      "gap_deg": 2.5,
+      "title_cn": "国际合作网络弦图\n（主要国家，合作发文量 ≥ 5 篇）",
+      "title_en": "International Collaboration Network\n(Top Countries, Co-authored Papers ≥ 5)",
+      "output_filename": "03_chord_diagram.png"
+    },
+    "map": {
+      "enabled": true,
+      "figsize": [16, 9],
+      "dpi": 150,
+      "map_cmap": "Blues",
+      "collab_line_color": "#e63946",
+      "title_cn": "国际合作地图",
+      "title_en": "International Collaboration Map",
+      "output_filename": "04_collaboration_map.png",
+      "shp_file": "全球国家边界/world_border2.shp",
+      "country_col": "NAME_0"
+    },
+    "keyword_bar": {
+      "enabled": true,
+      "figsize": [12, 7],
+      "top_n": 20,
+      "title_cn": "高频关键词（前20）",
+      "title_en": "Top 20 Keywords Frequency",
+      "xlabel_cn": "关键词",
+      "xlabel_en": "Keyword",
+      "ylabel_cn": "频次",
+      "ylabel_en": "Frequency",
+      "output_filename": "05_keyword_bar.png"
+    },
+    "keyword_pie": {
+      "enabled": true,
+      "figsize": [10, 10],
+      "top_n": 10,
+      "title_cn": "高频关键词分布（前10）",
+      "title_en": "Top 10 Keywords Distribution",
+      "output_filename": "06_keyword_pie.png"
+    },
+    "wordcloud": {
+      "enabled": true,
+      "figsize": [14, 7],
+      "max_words": 100,
+      "title_cn": "高频关键词词云图",
+      "title_en": "Keyword Word Cloud",
+      "output_filename": "07_wordcloud.png"
+    }
+  },
+
+  "country_cn_map": {
+    "China": "中国",
+    "USA": "美国",
+    "UK": "英国",
+    "South Korea": "韩国",
+    "Canada": "加拿大",
+    "Australia": "澳大利亚",
+    "Germany": "德国",
+    "Singapore": "新加坡",
+    "Japan": "日本",
+    "India": "印度",
+    "Italy": "意大利",
+    "Spain": "西班牙",
+    "France": "法国",
+    "Netherlands": "荷兰",
+    "Saudi Arabia": "沙特",
+    "Iran": "伊朗",
+    "Malaysia": "马来西亚",
+    "Belgium": "比利时",
+    "Sweden": "瑞典",
+    "Switzerland": "瑞士",
+    "Norway": "挪威",
+    "Denmark": "丹麦",
+    "Pakistan": "巴基斯坦",
+    "Egypt": "埃及",
+    "UAE": "阿联酋",
+    "其他": "其他"
+  }
+}
