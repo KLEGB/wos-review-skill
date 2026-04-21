@@ -2,6 +2,21 @@
 
 A self-contained skill for review analysis based on Web of Science exports (`.xls/.xlsx`), including statistics and chart generation.
 
+## Install As A Codex Skill
+
+Codex discovers local skills from:
+
+- Windows: `C:\Users\<YourUser>\.codex\skills\`
+- Linux/macOS: `${HOME}/.codex/skills/`
+
+Deploy this repo folder as:
+
+- `${CODEX_HOME:-$HOME/.codex}/skills/wos-review/`
+
+After copying, ensure `SKILL.md` exists at:
+
+- `.../skills/wos-review/SKILL.md`
+
 ## Features
 
 - Full workflow execution from one entry script.
@@ -37,6 +52,13 @@ wos-review/
       └─ 全球国家边界/
 ```
 
+## Release Artifacts
+
+This project publishes two release formats:
+
+- `*.zip`: Standard source archive. Unzip and place the `wos-review` folder into `${CODEX_HOME:-$HOME/.codex}/skills/`.
+- `*.skill`: Skill package format. Import/install directly if your Codex environment supports `.skill` package import; otherwise treat it as a distributable artifact and use the `.zip` path.
+
 ## Input Requirements
 
 Put WOS Excel files in:
@@ -70,9 +92,19 @@ Use external input/output folders:
 python skills/wos-review/scripts/generate_single_chart.py --chart chord --lang en --citations-dir E:\data\wos --outputs-dir E:\data\wos_out
 ```
 
+## How To Talk To Agent
+
+After the skill is installed, talk to Codex/Agent in natural language and explicitly mention the skill plus your target output.
+
+Examples:
+
+- `Use $wos-review-workflow to run the full pipeline with Chinese labels.`
+- `Use $wos-review-workflow and generate only map in English.`
+- `Use $wos-review-workflow, update color palette to blue-green, then regenerate chord and map.`
+- `Use $wos-review-workflow to validate whether my citations xlsx has required columns before plotting.`
+
 ## Notes
 
 - For map rendering, keep all shapefile siblings together under `assets/wos-review-core/全球国家边界/`:
   - `.shp`, `.shx`, `.dbf`, `.prj`, `.sbn`, `.sbx`
 - Color tuning is controlled by `assets/wos-review-core/settings.json`.
-
